@@ -53,11 +53,6 @@ const routes = [
         component: RecellersList,
     },
     {
-        path: '/customer',
-        name: 'Customer',
-        component: Customer,
-    },
-    {
         path: '/customersList',
         name: 'CustomersList',
         component: CustomersList,
@@ -76,6 +71,12 @@ const routes = [
         path: '/HelloWorld',
         name: 'HelloWorld',
         component: HelloWorld,
+    },
+    {
+        path: '/customersList/:id',
+        name: 'Customer',
+        component: Customer,
+        props: true
     }
 
 ]
