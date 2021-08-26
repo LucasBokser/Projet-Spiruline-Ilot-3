@@ -1,12 +1,24 @@
 <template>
   <div>
-    <h1>Receller</h1>
+    
+    
   </div>
 </template>
 
 <script>
+
 export default {
-  name: "Receller"
+  name: "Receller",
+  props:{
+   id: Number,
+   name: String,
+   description: String,
+   latitude: Number,
+   longitude: Number,
+   supplier_id: Number,
+
+
+  }
 }
 </script>
 
