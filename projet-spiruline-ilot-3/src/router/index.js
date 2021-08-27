@@ -63,9 +63,10 @@ const routes = [
         component: CustomersList,
     },
     {
-        path: '/order',
+        path: '/ordersList/:id',
         name: 'Order',
         component: Order,
+        props: true
     },
     {
         path: '/ordersList',
@@ -76,7 +77,7 @@ const routes = [
         path: '/HelloWorld',
         name: 'HelloWorld',
         component: HelloWorld,
-    }
+    },
 
 ]
 const router = new VueRouter({
