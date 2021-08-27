@@ -1,27 +1,86 @@
 <template>
   <div>
-    
-    
+    <h1>Fiche Reseller</h1>
+
+    <ul>
+      <label for="id">Id:</label>
+      <p>
+        <span id="id">{{ recellerBis.id }}</span>
+      </p>
+
+      <label for="name">name:</label>
+      <p>
+        <span id="name">{{ recellerBis.name }}</span>
+      </p>
+
+      <label for="description">description:</label>
+      <p>
+        <span id="description">{{ recellerBis.description }}</span>
+      </p>
+
+      <label for="latitude">latitude:</label>
+      <p>
+        <span id="latitude">{{ recellerBis.latitude }}</span>
+      </p>
+
+      <label for="longitude">longitude:</label>
+      <p>
+        <span id="longitude">{{ recellerBis.longitude }}</span>
+      </p>
+
+      <label for="supplier_id">supplier_id</label>
+      <p>
+        <span id="supplier_id">{{ recellerBis.supplier_id }}</span>
+      </p>
+    </ul>
+
+    <!--<b-table striped hover :items="recellers"></b-table>-->
   </div>
 </template>
 
 <script>
-
+import axios from "axios";
 export default {
   name: "Receller",
-  props:{
-   id: Number,
-   name: String,
-   description: String,
-   latitude: Number,
-   longitude: Number,
-   supplier_id: Number,
+  props: {
+    receller: Object,
+  },
 
+  data() {
+    return {
+      recellerBis: {},
+    };
+  },
 
-  }
-}
+  methods: {
+    getdata() {
+      this.loading = true;
+      axios
+        .get(
+          "https://heroku-campus-suppliers.herokuapp.com/api/resellers/" +
+            this.$route.params.id
+        )
+        .then((response) => {
+          this.recellerBis = response.data;
+          //console.log(response.data);
+          this.loading = false;
+        })
+        .catch(function(error) {
+          this.error = error;
+        })
+        .then(function() {});
+    },
+  },
+  mounted() {
+    if (this.receller === undefined) {
+      console.log("reseller is empty");
+      console.log(this.$route.params.id);
+      this.getdata();
+    } else {
+      this.recellerBis = this.receller;
+    }
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

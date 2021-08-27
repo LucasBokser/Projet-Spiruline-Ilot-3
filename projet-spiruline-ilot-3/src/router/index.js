@@ -38,9 +38,10 @@ const routes = [
         component: SuppliersMap,
     },
     {
-        path: '/receller',
+        path: '/recellersList/:id',
         name: 'Receller',
         component: Receller,
+        props: true
     },
     {
         path: '/recellersMap',
