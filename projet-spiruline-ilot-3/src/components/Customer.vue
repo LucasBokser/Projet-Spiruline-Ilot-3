@@ -4,6 +4,7 @@
 
     <!-- <b-table striped hover :items="customer">{{ customerBis.id }}</b-table> -->
 
+
     <ul>
       <li><label for="id">Id:</label>
         <p><span id="id">{{ customerBis.id }}</span></p></li>
@@ -22,6 +23,7 @@
       <li><label for="phoneNumber">Numero de telephone:</label>
         <p><span id="phoneNumber">{{ customerBis.phoneNumber }}</span></p></li>
     </ul>
+
   </div>
 
 </template>
@@ -46,7 +48,7 @@ export default {
           .get("https://heroku-campus-suppliers.herokuapp.com/api/customers/" + this.$route.params.id)
           .then((response) => {
             //console.log(response);
-            //console.log(response.data);
+            console.log(response.data);
             this.customerBis = response.data;
             this.loading = false;
           })
@@ -59,7 +61,7 @@ export default {
   },
   mounted() {
     if (this.customer === undefined) {
-      console.log("reseller is empty");
+      console.log("customer is empty");
       console.log(this.$route.params.id);
       this.getdata();
     } else {

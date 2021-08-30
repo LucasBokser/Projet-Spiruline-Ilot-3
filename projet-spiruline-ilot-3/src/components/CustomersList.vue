@@ -1,8 +1,14 @@
 <template>
   <div>
     <h1>CustomersList</h1>
+
+    <p class="mt-3">Page Actuelle: {{ pageActuelle }}/{{ lastPage }}</p>
+    <b-button @click="previousPage" v-show="pageActuelle-1>0" variant="outline-danger">Previous Page</b-button>
+    <b-button @click="nextPage" v-show="pageActuelle+1 <= lastPage" variant="outline-primary">Next Page</b-button>
+
     <!-- v-for="customer in customers" :key="customer.id"-->
-    <b-table striped hover :items="customers" :fields="fields">
+    <b-button variant="outline-success">Creer</b-button>
+    <b-table striped hover :items="customers" :fields="fields" :per-page="perPage" :current-page="currentPage">
       <template #cell(action)="data">
         <router-link :to="{name:'Customer',
       params:{
@@ -11,10 +17,13 @@
       }}"
         >
           <b-button variant="outline-primary">Accéder</b-button>
+          <b-button variant="outline-warning">Modifier</b-button>
+          <b-button variant="outline-danger">Supprimer</b-button>
         </router-link>
       </template>
     </b-table>
   </div>
+
 </template>
 
 
@@ -30,6 +39,11 @@ export default {
   components: {},
   data() {
     return {
+      perPage: 25,
+      pageActuelle: 1,
+      currentPage: 1,
+      lastPage: 1,
+      pageNumber: 1,
       loading: false,
       error: null,
       customers: [],
@@ -54,26 +68,44 @@ export default {
       ],
     }
   },
-
-  created() {
-    this.loading = true
-    axios
-        .get("https://heroku-campus-suppliers.herokuapp.com/api/customers")
-        .then((response) => {
-          console.log(response);
-          this.customers = response.data.data;
-          this.loading = false
-        })
-        .catch(function (error) {
-          this.error = error
-        })
-        .then(function () {
-          console.log("la fonction");
-        });
+  methods: {
+    getdata() {
+      this.loading = true
+      axios
+          .get("https://heroku-campus-suppliers.herokuapp.com/api/customers?page=" + this.pageActuelle)
+          .then((response) => {
+            //   console.log("then")
+            // console.log(response);
+            this.customers = response.data.data;
+            this.lastPage = response.data.last_page;
+            this.loading = false;
+          })
+          .catch(function (error) {
+            this.error = error
+          })
+          .then(function () {
+            //  console.log("la fonction");
+          });
+      // console.log("getdata")
+    },
+    nextPage() {
+      this.pageActuelle += 1;
+      this.getdata();
+    },
+    previousPage() {
+      this.pageActuelle -= 1;
+      this.getdata();
+    },
   },
   mounted() {
     // Set the initial number of items
     this.getdata();
+
+  },
+  computed: {
+    rows() {
+      return this.customers.length
+    }
   },
 
   /*
@@ -108,11 +140,7 @@ export default {
         ]
       }
     },*/
-  methods: {
-    displayName(customer) {
-      return customer.firstName + " " + customer.lastName
-    }
-  }
+
 }
 
 
