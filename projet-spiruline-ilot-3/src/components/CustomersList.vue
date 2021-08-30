@@ -1,13 +1,13 @@
 <template>
   <div>
     <h1>CustomersList</h1>
-
-    <b-table striped hover :items="customers" v-for="customer in customers" :key="customer.id" :fields="fields">
-      <template #cell(action)="">
+    <!-- v-for="customer in customers" :key="customer.id"-->
+    <b-table striped hover :items="customers" :fields="fields">
+      <template #cell(action)="data">
         <router-link :to="{name:'Customer',
       params:{
-        id:customer.id,
-        customer: customer
+        id:data.item.id,
+        customer: data.item,
       }}"
         >
           <b-button variant="outline-primary">Accéder</b-button>
