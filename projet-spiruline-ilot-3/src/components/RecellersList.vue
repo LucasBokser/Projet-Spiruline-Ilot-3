@@ -1,6 +1,18 @@
 <template>
   <div>
     <h1>ResellersList</h1>
+    <b-button
+      @click="previousPage"
+      v-show="currentPage - 1 > 0"
+      variant="outline-primary"
+      >Previous</b-button
+    >
+    <b-button
+      @click="nextPage"
+      v-show="currentPage + 1 <= lastPage"
+      variant="outline-primary"
+      >Next</b-button
+    >
 
     <b-table striped hover :items="recellers" :fields="fields">
       <template #cell(action)="data">
@@ -17,6 +29,10 @@
         >
       </template>
     </b-table>
+
+    <b-button variant="outline-primary">
+      <router-link to="/recellersMap">Map</router-link></b-button
+    >
   </div>
 </template>
 
@@ -30,9 +46,10 @@ export default {
 
   data() {
     return {
-      loading: false,
       error: null,
       recellers: [],
+      currentPage: 1,
+      lastPage: 1,
       fields: [
         {
           key: "id",
@@ -56,17 +73,27 @@ export default {
 
   methods: {
     getdata() {
-      this.loading = true;
       axios
-        .get("https://heroku-campus-suppliers.herokuapp.com/api/resellers")
+        .get(
+          "https://heroku-campus-suppliers.herokuapp.com/api/resellers?page=" +
+            this.currentPage
+        )
         .then((response) => {
+          console.log(response);
           this.recellers = response.data.data;
-          this.loading = false;
+          this.lastPage = response.data.last_page;
         })
-        .catch(function(error) {
+        .catch((error) => {
           this.error = error;
-        })
-        .then(function() {});
+        });
+    },
+    previousPage() {
+      this.currentPage -= 1;
+      this.getdata();
+    },
+    nextPage() {
+      this.currentPage += 1;
+      this.getdata();
     },
   },
 

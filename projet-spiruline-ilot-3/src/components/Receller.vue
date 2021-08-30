@@ -54,7 +54,6 @@ export default {
 
   methods: {
     getdata() {
-      this.loading = true;
       axios
         .get(
           "https://heroku-campus-suppliers.herokuapp.com/api/resellers/" +
@@ -63,12 +62,10 @@ export default {
         .then((response) => {
           this.recellerBis = response.data;
           //console.log(response.data);
-          this.loading = false;
         })
         .catch(function(error) {
           this.error = error;
-        })
-        .then(function() {});
+        });
     },
   },
   mounted() {
