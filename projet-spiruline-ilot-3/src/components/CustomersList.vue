@@ -71,6 +71,10 @@ export default {
           console.log("la fonction");
         });
   },
+  mounted() {
+    // Set the initial number of items
+    this.getdata();
+  },
 
   /*
   export default {
