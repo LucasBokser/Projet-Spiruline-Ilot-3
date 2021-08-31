@@ -15,6 +15,7 @@ import CustomerEdit from "../components/CustomerEdit";
 
 //import App from "../App";
 import Vue from "vue";
+import CustomerAdd from "../components/CustomerAdd";
 
 Vue.use(VueRouter)
 
@@ -87,7 +88,13 @@ const routes = [
         name: 'CustomerEdit',
         component: CustomerEdit,
         props: true
-    }
+    },
+    {
+        path: '/customers/add',
+        name: 'CustomerAdd',
+        component: CustomerAdd,
+        props: true
+    },
 
 
 ]
