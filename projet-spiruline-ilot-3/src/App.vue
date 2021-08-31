@@ -4,7 +4,7 @@
 
     <div>
       <b-navbar toggleable="lg" type="dark" variant="info">
-        <b-navbar-brand href="/home">Home</b-navbar-brand>
+        <b-navbar-brand href="/">Home</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -47,9 +47,10 @@
       </b-navbar>
     </div>
 
+    <div id="ontente">
 
-    <img alt="Vue logo" src="https://cdn.wallpapersafari.com/86/22/GB49kZ.jpg">
-    <HelloWorld msg="Ca Wax pour moi"/>
+    </div>
+    <!--<HelloWorld msg="Ca Wax pour moi"/>-->
     <router-view></router-view>
 
 
@@ -59,25 +60,43 @@
 
 <script>
 
-
-import HelloWorld from './components/HelloWorld.vue'
+//import Home from "./components/Home";
+//import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    //HelloWorld,
+    //Home,
+  },
 
-  }
 }
 
 </script>
 
 <style>
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+
+}
+
+#carousel {
+  width: 1024px;
+  height: 700px;
+  border-radius: 100%;
+  align-content: center;
+  margin: 0 auto;
+
+}
+
+#ontente {
+  background-color: #2c3e50;
 }
 </style>

@@ -11,7 +11,7 @@ import Supplier from "../components/Supplier";
 import SuppliersList from "../components/SuppliersList";
 import SuppliersMap from "../components/SuppliersMap";
 import CustomerEdit from "../components/CustomerEdit";
-
+import Home from "../components/Home";
 
 //import App from "../App";
 import Vue from "vue";
@@ -92,6 +92,11 @@ const routes = [
         name: 'CustomerAdd',
         component: CustomerAdd,
         props: true
+    },
+    {
+        path: '/',
+        name: 'Home',
+        component: Home,
     },
 
 ]
