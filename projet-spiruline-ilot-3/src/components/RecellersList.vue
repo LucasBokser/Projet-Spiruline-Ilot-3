@@ -1,6 +1,14 @@
 <template>
-  <div>
+  <div class="backG">
     <h1>ResellersList</h1>
+
+    <router-link
+      :to="{
+        name: 'CreateReceller',
+      }"
+    >
+      <b-button variant="outline-success">Create</b-button>
+    </router-link>
     <b-button
       @click="previousPage"
       v-show="currentPage - 1 > 0"
@@ -13,23 +21,49 @@
       variant="outline-primary"
       >Next</b-button
     >
+    <div class="table">
+      <b-table striped hover :items="recellers" :fields="fields">
+        <template #cell(action)="data">
+          <router-link
+            :to="{
+              name: 'Receller',
+              params: {
+                id: data.item.id,
+                receller: data.item,
+              },
+            }"
+          >
+            <b-button variant="outline-primary">Show</b-button>
+          </router-link>
 
-    <b-table striped hover :items="recellers" :fields="fields">
-      <template #cell(action)="data">
-        <router-link
-          :to="{
-            name: 'Receller',
-            params: {
-              id: data.item.id,
-              receller: data.item,
-            },
-          }"
-        >
-          <b-button variant="outline-primary">Accéder</b-button></router-link
-        >
-      </template>
-    </b-table>
+          <router-link
+            :to="{
+              name: 'EditReceller',
+              params: {
+                id: data.item.id,
+                receller: data.item,
+              },
+            }"
+          >
+            <b-button variant="outline-info">Edit</b-button>
+          </router-link>
 
+          <router-link
+            :to="{
+              name: 'RecellersList',
+              params: {
+                id: data.item.id,
+                receller: data.item,
+              },
+            }"
+          >
+            <b-button @click="deleteData(data.item.id)" variant="outline-danger"
+              >Delete</b-button
+            >
+          </router-link>
+        </template>
+      </b-table>
+    </div>
     <b-button variant="outline-primary">
       <router-link to="/recellersMap">Map</router-link></b-button
     >
@@ -46,7 +80,6 @@ export default {
 
   data() {
     return {
-      error: null,
       recellers: [],
       currentPage: 1,
       lastPage: 1,
@@ -95,6 +128,21 @@ export default {
       this.currentPage += 1;
       this.getdata();
     },
+    deleteData(receller_id) {
+      axios
+        .delete(
+          "https://heroku-campus-suppliers.herokuapp.com/api/resellers/" +
+            receller_id
+        )
+        .then((response) => {
+          console.log(response);
+          this.recellers = response.data.data;
+          this.lastPage = response.data.last_page;
+        })
+        .catch((error) => {
+          this.error = error;
+        });
+    },
   },
 
   mounted() {
@@ -103,4 +151,12 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.backG {
+  background-color: #2c3e50;
+  color: white;
+}
+.table {
+  color: white;
+}
+</style>

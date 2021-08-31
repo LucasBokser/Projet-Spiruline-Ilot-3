@@ -56,10 +56,6 @@
       </b-navbar>
     </div>
 
-    <img
-      alt="Vue logo"
-      src="https://cdn.wallpapersafari.com/86/22/GB49kZ.jpg"
-    />
     <HelloWorld msg="Ca Wax pour moi" />
     <router-view></router-view>
   </div>
@@ -83,6 +79,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

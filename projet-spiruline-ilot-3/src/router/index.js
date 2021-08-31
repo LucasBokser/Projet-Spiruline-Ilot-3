@@ -10,6 +10,8 @@ import RecellersMap from "../components/RecellersMap";
 import Supplier from "../components/Supplier";
 import SuppliersList from "../components/SuppliersList";
 import SuppliersMap from "../components/SuppliersMap";
+import EditReceller from "../components/EditReceller";
+import CreateReceller from "../components/CreateReceller";
 
 
 //import App from "../App";
@@ -53,6 +55,20 @@ const routes = [
         name: 'RecellersList',
         component: RecellersList,
     },
+    {
+        path: '/editReceller/:id',
+        name: 'EditReceller',
+        component: EditReceller,
+        props: true
+    },
+    {
+        path: '/createReceller/',
+        name: 'CreateReceller',
+        component: CreateReceller,
+        props: true
+    },
+
+
     {
         path: '/customer',
         name: 'Customer',
