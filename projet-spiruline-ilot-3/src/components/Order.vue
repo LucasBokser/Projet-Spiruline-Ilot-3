@@ -1,5 +1,5 @@
 
-<template>
+<template   >
   <div class="order-styles">
     <div class="orders">
       <h1>Order List</h1>
@@ -39,25 +39,25 @@ export default {
 
   methods: {
     getdata() {
-      this.loading = true
-      axios
+
+      axios //Création d'une promesse qui va contenir l'appel
           .get("https://heroku-campus-suppliers.herokuapp.com/api/orders/" + this.$route.params.id)
-          .then((response) => {
-            //console.log(response);
-            //console.log(response.data);
-            this.orderBis = response.data;
-            this.loading = false;
+          .then((response) => { // Avec la méthode "then", on extrait les données
+            console.log(response);
+            console.log(response.data);
+            this.orderBis = response.data; //  On retourne les données
+
           })
           .catch(function (error) {
             this.error = error;
           })
-          .then(function () {});
+
     },
   },
     mounted() {
 
       if (this.order === undefined) {
-        console.log("reseller is empty");
+        console.log("order is empty");
         console.log(this.$route.params.id);
         this.getdata();
 

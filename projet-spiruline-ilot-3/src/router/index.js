@@ -10,8 +10,9 @@ import RecellersMap from "../components/RecellersMap";
 import Supplier from "../components/Supplier";
 import SuppliersList from "../components/SuppliersList";
 import SuppliersMap from "../components/SuppliersMap";
+import OrderEdit from "../components/OrderEdit";
 
-
+import CreateOrder from "../components/CreateOrder";
 //import App from "../App";
 import Vue from "vue";
 Vue.use(VueRouter)
@@ -79,9 +80,19 @@ const routes = [
         name: 'Customer',
         component: Customer,
         props: true
-    }
-
-
+    },
+    {
+        path: '/orders/edit/:id',
+        name: 'OrderEdit',
+        component: OrderEdit,
+        props: true
+    },
+    {
+        path: '/orders/add',
+        name: 'CreateOrder',
+        component: CreateOrder,
+        props: true
+    },
 ]
 const router = new VueRouter({
     routes
