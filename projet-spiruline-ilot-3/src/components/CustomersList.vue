@@ -17,9 +17,17 @@
       }}"
         >
           <b-button variant="outline-primary">Accéder</b-button>
-          <b-button variant="outline-warning">Modifier</b-button>
-          <b-button variant="outline-danger">Supprimer</b-button>
         </router-link>
+        <router-link :to="{name:'CustomerEdit',
+      params:{
+        id:data.item.id,
+        customer: data.item,
+      }}"
+        >
+          <b-button variant="outline-warning">Modifier</b-button>
+        </router-link>
+        <b-button @click="deleteCustomer" variant="outline-danger">Supprimer</b-button>
+
       </template>
     </b-table>
   </div>
@@ -96,17 +104,17 @@ export default {
       this.pageActuelle -= 1;
       this.getdata();
     },
+    deleteCustomer() {
+      axios.delete("https://heroku-campus-suppliers.herokuapp.com/api/customers/" + this.customer.id);
+      this.getdata();
+    },
   },
   mounted() {
     // Set the initial number of items
     this.getdata();
 
   },
-  computed: {
-    rows() {
-      return this.customers.length
-    }
-  },
+  
 
   /*
   export default {
