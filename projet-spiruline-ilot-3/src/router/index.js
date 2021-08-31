@@ -1,4 +1,4 @@
-import  VueRouter  from 'vue-router'
+import VueRouter from 'vue-router'
 import HelloWorld from '../components/HelloWorld.vue'
 import Customer from "../components/Customer";
 import CustomersList from "../components/CustomersList";
@@ -10,10 +10,12 @@ import RecellersMap from "../components/RecellersMap";
 import Supplier from "../components/Supplier";
 import SuppliersList from "../components/SuppliersList";
 import SuppliersMap from "../components/SuppliersMap";
+import CustomerEdit from "../components/CustomerEdit";
 
 
 //import App from "../App";
 import Vue from "vue";
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -78,6 +80,12 @@ const routes = [
         path: '/customersList/:id',
         name: 'Customer',
         component: Customer,
+        props: true
+    },
+    {
+        path: '/customers/edit/:id',
+        name: 'CustomerEdit',
+        component: CustomerEdit,
         props: true
     }
 
