@@ -7,7 +7,11 @@
     <b-button @click="nextPage" v-show="pageActuelle+1 <= lastPage" variant="outline-primary">Next Page</b-button>
 
     <!-- v-for="customer in customers" :key="customer.id"-->
-    <b-button variant="outline-success">Creer</b-button>
+    <router-link :to="{name:'CustomerAdd',
+     }"
+    >
+      <b-button variant="outline-success">Creer</b-button>
+    </router-link>
     <b-table striped hover :items="customers" :fields="fields" :per-page="perPage" :current-page="currentPage">
       <template #cell(action)="data">
         <router-link :to="{name:'Customer',
@@ -26,7 +30,8 @@
         >
           <b-button variant="outline-warning">Modifier</b-button>
         </router-link>
-        <b-button @click="deleteCustomer" variant="outline-danger">Supprimer</b-button>
+
+        <b-button @click="deleteCustomer(data.item.id)" variant="outline-danger">Supprimer</b-button>
 
       </template>
     </b-table>
@@ -104,8 +109,9 @@ export default {
       this.pageActuelle -= 1;
       this.getdata();
     },
-    deleteCustomer() {
-      axios.delete("https://heroku-campus-suppliers.herokuapp.com/api/customers/" + this.customer.id);
+    deleteCustomer(customer_id) {
+      console.log(customer_id)
+      axios.delete("https://heroku-campus-suppliers.herokuapp.com/api/customers/" + customer_id).catch(error => alert(error));
       this.getdata();
     },
   },
@@ -114,7 +120,7 @@ export default {
     this.getdata();
 
   },
-  
+
 
   /*
   export default {
