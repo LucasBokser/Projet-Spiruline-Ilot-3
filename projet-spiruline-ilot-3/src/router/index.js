@@ -1,4 +1,4 @@
-import  VueRouter  from 'vue-router'
+import VueRouter from 'vue-router'
 import HelloWorld from '../components/HelloWorld.vue'
 import Customer from "../components/Customer";
 import CustomersList from "../components/CustomersList";
@@ -10,11 +10,17 @@ import RecellersMap from "../components/RecellersMap";
 import Supplier from "../components/Supplier";
 import SuppliersList from "../components/SuppliersList";
 import SuppliersMap from "../components/SuppliersMap";
+
 import OrderEdit from "../components/OrderEdit";
+
+import CustomerEdit from "../components/CustomerEdit";
+
 
 import CreateOrder from "../components/CreateOrder";
 //import App from "../App";
 import Vue from "vue";
+import CustomerAdd from "../components/CustomerAdd";
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -82,6 +88,7 @@ const routes = [
         props: true
     },
     {
+
         path: '/orders/edit/:id',
         name: 'OrderEdit',
         component: OrderEdit,
@@ -93,6 +100,21 @@ const routes = [
         component: CreateOrder,
         props: true
     },
+        {
+        path: '/customers/edit/:id',
+        name: 'CustomerEdit',
+        component: CustomerEdit,
+        props: true
+    },
+    {
+        path: '/customers/add',
+        name: 'CustomerAdd',
+        component: CustomerAdd,
+        props: true
+    },
+
+
+
 ]
 const router = new VueRouter({
     routes
