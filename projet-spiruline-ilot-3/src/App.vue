@@ -67,9 +67,7 @@ export default {
   components: {
     //HelloWorld,
     //Home,
-
   },
-
 }
 
 </script>
