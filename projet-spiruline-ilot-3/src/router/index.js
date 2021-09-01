@@ -1,4 +1,4 @@
-import  VueRouter  from 'vue-router'
+import VueRouter from 'vue-router'
 import HelloWorld from '../components/HelloWorld.vue'
 import Customer from "../components/Customer";
 import CustomersList from "../components/CustomersList";
@@ -10,6 +10,7 @@ import RecellersMap from "../components/RecellersMap";
 import Supplier from "../components/Supplier";
 import SuppliersList from "../components/SuppliersList";
 import SuppliersMap from "../components/SuppliersMap";
+
 import SuppliersEdit from "../components/SuppliersEdit";
 import shop from "../components/shop";
 import panier from "../components/panier";
@@ -19,9 +20,23 @@ import merci from  "../components/merci";
 
 
 
+import EditReceller from "../components/EditReceller";
+import CreateReceller from "../components/CreateReceller";
 
+
+import OrderEdit from "../components/OrderEdit";
+
+import CustomerEdit from "../components/CustomerEdit";
+import Home from "../components/Home";
+
+
+import CreateOrder from "../components/CreateOrder";
 //import App from "../App";
 import Vue from "vue";
+
+
+import CustomerAdd from "../components/CustomerAdd";
+
 
 Vue.use(VueRouter)
 
@@ -54,9 +69,10 @@ const routes = [
         props:true
     },
     {
-        path: '/receller',
+        path: '/recellersList/:id',
         name: 'Receller',
         component: Receller,
+        props: true
     },
     {
         path: '/recellersMap',
@@ -69,19 +85,36 @@ const routes = [
         component: RecellersList,
     },
     {
+
+        path: '/editReceller/:id',
+        name: 'EditReceller',
+        component: EditReceller,
+        props: true
+    },
+    {
+        path: '/createReceller/',
+        name: 'CreateReceller',
+        component: CreateReceller,
+        props: true
+    },
+
+
+    {
         path: '/customer',
         name: 'Customer',
         component: Customer,
     },
     {
+
         path: '/customersList',
         name: 'CustomersList',
         component: CustomersList,
     },
     {
-        path: '/order',
+        path: '/ordersList/:id',
         name: 'Order',
         component: Order,
+        props: true
     },
     {
         path: '/ordersList',
@@ -93,6 +126,7 @@ const routes = [
         name: 'HelloWorld',
         component: HelloWorld,
     },
+
     {
         path: 'SuppliersEdit/:id',
         name: 'SuppliersEdit',
@@ -125,6 +159,46 @@ const routes = [
     },
  
     { path: '/suppliersMap', component: SuppliersMap, name: 'Map', props: true, }, //route qui affiche la map
+
+
+    {
+        path: '/customersList/:id',
+        name: 'Customer',
+        component: Customer,
+        props: true
+    },
+    {
+
+        path: '/orders/edit/:id',
+        name: 'OrderEdit',
+        component: OrderEdit,
+        props: true
+    },
+    {
+        path: '/orders/add',
+        name: 'CreateOrder',
+        component: CreateOrder,
+        props: true
+    },
+        {
+        path: '/customers/edit/:id',
+        name: 'CustomerEdit',
+        component: CustomerEdit,
+        props: true
+    },
+    {
+        path: '/customers/add',
+        name: 'CustomerAdd',
+        component: CustomerAdd,
+        props: true
+    },
+    {
+        path: '/',
+        name: 'Home',
+        component: Home,
+    },
+
+
 
 
 ]

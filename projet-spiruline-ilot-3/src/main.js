@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from "./router"
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
+//import Home from "./components/Home";
+import "@/assets/global.css";
+
 
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
@@ -31,6 +34,15 @@ new Vue({
 
 
 
+
+Vue.config.productionTip = false
+
+new Vue({
+    router,
+    render: h => h(App),
+}).$mount('#app')
+
+
 // Import the Icon
 import { Icon } from "leaflet";
 // Import the whole Leaflet CSS
@@ -54,5 +66,7 @@ import 'leaflet/dist/leaflet.css';
 Vue.component('l-map', LMap);
 Vue.component('l-tile-layer', LTileLayer);
 Vue.component('l-marker', LMarker);
+
+
 
 
