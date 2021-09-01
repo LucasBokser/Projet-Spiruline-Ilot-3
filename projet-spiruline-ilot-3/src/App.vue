@@ -1,7 +1,5 @@
 <template>
-
   <div id="app">
-
     <div>
       <b-navbar toggleable="lg" type="dark" variant="info">
         <b-navbar-brand href="/home">Home</b-navbar-brand>
@@ -10,6 +8,28 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
+
+            <b-nav-item>
+              <router-link to="/customersList"
+                >Go to Customer</router-link
+              ></b-nav-item
+            >
+            <b-nav-item>
+              <router-link to="/ordersList"
+                >Go to Order</router-link
+              ></b-nav-item
+            >
+            <b-nav-item>
+              <router-link to="/recellersList"
+                >Go to Receller</router-link
+              ></b-nav-item
+            >
+            <b-nav-item>
+              <router-link to="/suppliersList"
+                >Go to Supplier</router-link
+              ></b-nav-item
+            >
+
 
             <b-nav-item>
               <router-link to="/customersList" tag="cx-button">Go to Customer</router-link>
@@ -24,14 +44,22 @@
               <router-link to="/suppliersList" tag="cx-button">Go to Supplier</router-link>
             </b-nav-item>
 
+
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
             <b-nav-form>
-              <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-              <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+              <b-form-input
+                size="sm"
+                class="mr-sm-2"
+                placeholder="Search"
+              ></b-form-input>
+              <b-button size="sm" class="my-2 my-sm-0" type="submit"
+                >Search</b-button
+              >
             </b-nav-form>
+
 
 
             <b-nav-item-dropdown right>
@@ -47,25 +75,20 @@
       </b-navbar>
     </div>
 
-
-    <img alt="Vue logo" src="https://cdn.wallpapersafari.com/86/22/GB49kZ.jpg">
-    <HelloWorld msg="Ca Wax pour moi"/>
     <router-view></router-view>
-
-
   </div>
-
 </template>
 
 <script>
 
 
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HelloWorld,
+
+  },
+};
 
   }
 }
@@ -79,6 +102,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+
 
 
 
