@@ -16,6 +16,12 @@
             <b-nav-item>  <router-link to="/ordersList">Go to Order</router-link></b-nav-item>
               <b-nav-item>  <router-link to="/recellersList">Go to Receller</router-link></b-nav-item>
                 <b-nav-item>  <router-link to="/suppliersList">Go to Supplier</router-link></b-nav-item>
+                    <b-nav-item>  <router-link to="/shop">Go to shop</router-link></b-nav-item>
+
+
+
+                
+                
 
           </b-navbar-nav>
 
@@ -42,7 +48,7 @@
     </div>
 
 
-    <img alt="Vue logo" src="https://cdn.wallpapersafari.com/86/22/GB49kZ.jpg">
+    <img alt="" src="">
     <HelloWorld msg="Ca Wax pour moi" />
     <router-view></router-view>
 
@@ -52,6 +58,7 @@
 </template>
 
 <script>
+
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {

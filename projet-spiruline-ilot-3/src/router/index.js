@@ -10,10 +10,19 @@ import RecellersMap from "../components/RecellersMap";
 import Supplier from "../components/Supplier";
 import SuppliersList from "../components/SuppliersList";
 import SuppliersMap from "../components/SuppliersMap";
+import SuppliersEdit from "../components/SuppliersEdit";
+import shop from "../components/shop";
+import panier from "../components/panier";
+import checkoutcard from  "../components/checkoutcard";
+import merci from  "../components/merci";
+
+
+
 
 
 //import App from "../App";
 import Vue from "vue";
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -28,7 +37,13 @@ const routes = [
         component: Supplier,
     },
     {
-        path: '/suppliersList',
+        path: '/suppliersList/:id',
+        name: 'SupplierFiche',
+        component: Supplier,
+        props:true
+    },
+    {
+        path: '/SuppliersList',
         name: 'SuppliersList',
         component: SuppliersList,
     },
@@ -36,6 +51,7 @@ const routes = [
         path: '/suppliersMap',
         name: 'SuppliersMap',
         component: SuppliersMap,
+        props:true
     },
     {
         path: '/receller',
@@ -76,9 +92,44 @@ const routes = [
         path: '/HelloWorld',
         name: 'HelloWorld',
         component: HelloWorld,
-    }
+    },
+    {
+        path: 'SuppliersEdit/:id',
+        name: 'SuppliersEdit',
+        component: SuppliersEdit,
+        props: true
+    },
+    {
+        path: '/shop',
+        name: 'shop',
+        component: shop,
+        
+    },
+    {
+        path: '/panier',
+        name: 'panier',
+        component: panier,
+        
+    },
+    {
+        path: '/checkoutcard',
+        name: 'checkoutcard',
+        component: checkoutcard,
+        
+    },
+    {
+        path: '/merci',
+        name: 'merci',
+        component: merci,
+        
+    },
+ 
+    { path: '/suppliersMap', component: SuppliersMap, name: 'Map', props: true, }, //route qui affiche la map
+
 
 ]
+
+
 const router = new VueRouter({
     routes
 })
