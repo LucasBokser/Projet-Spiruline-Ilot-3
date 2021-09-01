@@ -1,0 +1,98 @@
+Les composants :
+
+- Enrichir le HTML de facon modulaire
+- Les composants peuvent être réutilisés autant de fois que vous le souhaitez ou utilisés dans un autre composant
+- Notre page est composé de plusieurs composant, qui sont appelé via les routeurs
+- Importer le composant dans index.js
+
+
+
+props :
+
+La façon dont nous transmettons les données d'un composant parent à ses composants enfants 
+Passer de facon dynamique ou statique les props
+Reutiliser le meme composant avec des data differente
+
+
+
+
+
+app hybride:
+Les applications hybrides combinent les fonctionnalités des applications natives et Web. 
+Ils sont accessibles via un navigateur Web et téléchargés à partir des magasins d'applications.
+Ils sont écrits en HTML5 et JavaScript, comme les applications Web.
+Avantage :plus rapide a dev,moins d'entretien. 
+Vitesse app :Depend de la vitesse du naviguateur
+
+
+
+app web:
+Les applications Web sont des sites Web optimisés pour les navigateurs mobiles. 
+Ils sont uniquement développés pour être accessibles via un navigateur Web.
+Ils peuvent fonctionner dans plusieurs navigateurs, tels que Chrome ou Safari, et sont écrits en JavaScript et HTML5.
+L'avantage cependant, c'est que ces applications sont souvent moins coûteuses à développer.
+L'inconvénient est que les applications Web peuvent être plus lentes, moins intuitives et inaccessibles via les magasins d'applications. 
+
+
+
+
+
+app native:
+Les applications natives sont des applications pour smartphone spécialement conçues pour un système d'exploitation particulier : iOS ou Android.
+Ce qui distingue les applications natives des applications Web mobiles et hybrides, c'est qu'elles sont développées pour des appareils spécifiques.
+Par exemple, les applications Android sont écrites en Java et les applications iPhone sont écrites en Objective-C ou Swift. 
+
+L'avantage de choisir une application native est qu'elle est la plus rapide et la plus fiable en matière d'expérience utilisateur
+Constuite avec un SDK ( Software dev kit)
+Tres chere
+PLus chere a entretenir 
+
+
+
+SPA vs LARAVEL :
+
+
+Pour une SPA, le serveur envoie aux clients le script qui permet de générer la page.
+Lcode s’exécute côté client. Cela permet de naviguer sur toute l’application web sans rechargement de la page.
+Plus rapide, fluide et ressemblant davantage à une application native,
+une SPA charge toutes les données nécessaires pour le visiteur au premier chargement contrairement a une app normal qui va charger a chaque clic
+
+
+- Le referencement ( point faible de SPA) Le robot a pas access au code.
+
+
+
+Vanilla vs Vuejs
+
+Vue.js est un framework JavaScript
+Vanilla.js est un terme utilisé pour désigner le code JavaScript brut.
+Vanilla est un simple code sans aucune biblihoteque mais on peut add des biblihoteque comme jquery ect
+Des choses comme obtenir des éléments dans le DOM, manipuler des classes, des styles devenu plus simple pour VueJS
+Vanilla est vraiment mal documenté
+Le DOM virtuel est plus rapide et plus perfomant pour Vuejs
+Impossible de use jquery sur vue vue JS car vue JS va fabriquer un DOM virtuel 
+Le binding est une technique permettant d'associer une instance d'un objet à une fonction par le biais d'une closure.
+
+
+
+Promesse :
+
+
+Permet d’encapsuler une fonction qui sera exécutée de manière asynchrone
+Les promesses permettent d'ameliorer la maintenabilité du code et de faciliter sa lisibilité
+en optimisant
+Une promesse est un objet qui reprensente la completion (then) d'une operation ou l'echec (catch) d'une operation
+une promesse est un objet qui est renvoyé et auquel on attache des callbacks plutôt que de passer des callbacks à une fonction
+permet de chainer des fonctions
+
+
+DOM vs VIRTUAL DOM
+
+DOM JS facile de le modifier mais pas rapidement.
+Contrairement au Virtual DOM qui lui a ses dom VIRTUAL
+Tres tres chere de modifier le DOM ( modification de noeud)
+Le DOM virtuel est plus rapide et plus perfomant pour Vuejs
+Le DOM virtuel est plus rapide et efficace du faites qui'l est legé
+
+
+
