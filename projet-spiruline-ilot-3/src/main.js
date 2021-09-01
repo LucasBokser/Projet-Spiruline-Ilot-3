@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from "./router"
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
 //import Home from "./components/Home";
+import "@/assets/global.css";
+
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'

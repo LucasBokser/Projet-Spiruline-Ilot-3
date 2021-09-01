@@ -2,7 +2,7 @@
 
   <div id="app">
 
-    <div>
+    <div id="nav">
       <b-navbar toggleable="lg" type="dark" variant="info">
         <b-navbar-brand href="/">Home</b-navbar-brand>
 
@@ -12,16 +12,16 @@
           <b-navbar-nav>
 
             <b-nav-item>
-              <router-link to="/customersList" tag="cx-button">Go to Customer</router-link>
+              <router-link to="/customersList" tag="li">Go to Customer</router-link>
             </b-nav-item>
             <b-nav-item>
-              <router-link to="/ordersList" tag="cx-button">Go to Order</router-link>
+              <router-link to="/ordersList" tag="li">Go to Order</router-link>
             </b-nav-item>
             <b-nav-item>
-              <router-link to="/recellersList" tag="cx-button">Go to Receller</router-link>
+              <router-link to="/recellersList" tag="li">Go to Receller</router-link>
             </b-nav-item>
             <b-nav-item>
-              <router-link to="/suppliersList" tag="cx-button">Go to Supplier</router-link>
+              <router-link to="/suppliersList" tag="li">Go to Supplier</router-link>
             </b-nav-item>
 
           </b-navbar-nav>
@@ -52,8 +52,6 @@
     </div>
     <!--<HelloWorld msg="Ca Wax pour moi"/>-->
     <router-view></router-view>
-
-
   </div>
 
 </template>
@@ -63,11 +61,13 @@
 //import Home from "./components/Home";
 //import HelloWorld from './components/HelloWorld.vue'
 
+
 export default {
   name: 'App',
   components: {
     //HelloWorld,
     //Home,
+
   },
 
 }
@@ -75,7 +75,9 @@ export default {
 </script>
 
 <style>
-
+#nav {
+  align-content: center;
+}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

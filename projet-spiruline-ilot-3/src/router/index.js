@@ -13,6 +13,7 @@ import SuppliersMap from "../components/SuppliersMap";
 import CustomerEdit from "../components/CustomerEdit";
 import Home from "../components/Home";
 
+
 //import App from "../App";
 import Vue from "vue";
 import CustomerAdd from "../components/CustomerAdd";
