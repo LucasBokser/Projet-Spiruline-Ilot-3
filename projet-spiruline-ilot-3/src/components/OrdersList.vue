@@ -1,21 +1,22 @@
 <template>
   <div>
+  <div id="orderList">
 
-    <h1>OrderList</h1>
+    <h1>Liste des commandes</h1>
     <p class="mt-3">Page Actuelle: {{ pageActuelle }}/{{ lastPage }}</p>
-    <b-button @click="previousPage" v-show="pageActuelle-1>0" variant="outline-danger">Previous Page</b-button>
-    <b-button @click="nextPage" v-show="pageActuelle+1 <= lastPage" variant="outline-primary">Next Page</b-button>
+    <b-button @click="previousPage" v-show="pageActuelle-1>0" variant="outline-danger">Page précédente</b-button>
+    <b-button @click="nextPage" v-show="pageActuelle+1 <= lastPage" variant="outline-primary">Page suivante</b-button>
 
 
     <router-link :to="{name:'CreateOrder',
      }"
     >
-      <b-button variant="outline-success">Create order</b-button>
+      <b-button variant="outline-success">Créer</b-button>
     </router-link>
 
+  </div>
 
-
-    <b-table :items="orders" :fields="fields"  :current-page="currentPage">
+    <b-table responsive striped hover :items="orders" :fields="fields"  :current-page="currentPage">
 
       <template #cell(action)="data">
         <router-link
@@ -27,7 +28,7 @@
             },
           }"
         >
-          <b-button variant="outline-primary">View details </b-button>
+          <b-button variant="outline-primary">Accéder </b-button>
 
         </router-link><router-link :to="{name:'OrderEdit',
       params:{
@@ -35,11 +36,11 @@
         order: data.item,
       }}"
       >
-        <b-button variant="outline-warning">Update</b-button>
+        <b-button variant="outline-warning">Modifier</b-button>
       </router-link>
 
 
-        <b-button @click="deleteOrder(data.item.id)" variant="outline-danger">Delete</b-button>
+        <b-button @click="deleteOrder(data.item.id)" variant="outline-danger">Supprimer</b-button>
 
       </template>
     </b-table>
@@ -85,18 +86,7 @@ export default {
           sortable: true,
           label: "Date",
         },
-        {
-          key: 'price',
 
-          sortable: true,
-          label: "Price",
-        },
-        {
-          key: 'customer_id',
-
-          sortable: true,
-          label: "Customer id",
-        },
         {
           key: "action",
           label: "Action",
@@ -158,5 +148,7 @@ export default {
 </script>
 
 <style scoped>
-
+#orderList{
+  background-color: #F6E6D1;
+}
 </style>

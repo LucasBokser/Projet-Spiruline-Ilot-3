@@ -1,7 +1,11 @@
 <template>
 
   <div>
-
+    <router-link :to="{name:'CustomersList',
+      }"
+    >
+      <b-button variant="outline-primary">Back</b-button>
+    </router-link>
     <!-- <b-table striped hover :items="customer">{{ customerBis.id }}</b-table> -->
 
 
@@ -96,6 +100,9 @@ li {
 
 a {
   color: #42b983;
+}
+div{
+  background-color: #F6E6D1 ;
 }
 </style>
 

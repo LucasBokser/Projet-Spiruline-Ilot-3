@@ -1,28 +1,33 @@
 <template>
-  <div class="backG">
-    <h1>ResellersList</h1>
+  <div>
+  <div class="backG" id="resellerList">
+    <h1>Liste des revendeurs</h1>
 
-    <router-link
-      :to="{
-        name: 'CreateReceller',
-      }"
-    >
-      <b-button variant="outline-success">Create</b-button>
-    </router-link>
+
     <b-button
       @click="previousPage"
       v-show="currentPage - 1 > 0"
       variant="outline-primary"
-      >Previous</b-button
+      >Page précédente</b-button
     >
     <b-button
       @click="nextPage"
       v-show="currentPage + 1 <= lastPage"
       variant="outline-primary"
-      >Next</b-button
+      >Page suivante</b-button
     >
+    <router-link
+        :to="{
+        name: 'CreateReceller',
+      }"
+    >
+      <b-button variant="outline-success">Créer</b-button>
+    </router-link>
+
+      <router-link to="/recellersMap"><b-button variant="outline-info">Map</b-button></router-link>
+  </div>
     <div class="table">
-      <b-table striped hover :items="recellers" :fields="fields">
+      <b-table responsive striped hover :items="recellers" :fields="fields">
         <template #cell(action)="data">
           <router-link
             :to="{
@@ -33,7 +38,7 @@
               },
             }"
           >
-            <b-button variant="outline-primary">Show</b-button>
+            <b-button variant="outline-primary">Accéder</b-button>
           </router-link>
 
           <router-link
@@ -45,7 +50,7 @@
               },
             }"
           >
-            <b-button variant="outline-info">Edit</b-button>
+            <b-button variant="outline-warning">Modifier</b-button>
           </router-link>
 
           <router-link
@@ -58,15 +63,13 @@
             }"
           >
             <b-button @click="deleteData(data.item.id)" variant="outline-danger"
-              >Delete</b-button
+              >Supprimer</b-button
             >
           </router-link>
         </template>
       </b-table>
     </div>
-    <b-button variant="outline-primary">
-      <router-link to="/recellersMap">Map</router-link></b-button
-    >
+
   </div>
 </template>
 
@@ -91,6 +94,7 @@ export default {
         },
         {
           key: "name",
+          sortable: true,
           label: "Nom",
         },
         {
@@ -152,11 +156,7 @@ export default {
 </script>
 
 <style scoped>
-.backG {
-  background-color: #2c3e50;
-  color: white;
-}
-.table {
-  color: white;
+#resellerList{
+ background-color: #F6E6D1;
 }
 </style>

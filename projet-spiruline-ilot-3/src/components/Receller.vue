@@ -1,7 +1,11 @@
 <template>
   <div>
-    <h1>Fiche Reseller</h1>
-
+    <h1>Fiche Revendeur</h1>
+    <router-link :to="{name:'RecellersList',
+      }"
+    >
+      <b-button variant="outline-primary">Back</b-button>
+    </router-link><br>
     <ul>
       <label for="id">Id:</label>
       <p>
@@ -80,4 +84,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+div{
+  background-color: #F6E6D1;
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>
+  <div id="createCustomer">
+    <div id="titleC">
       <h2><span>Modification d'un customer</span></h2>
       <router-link :to="{name:'CustomersList',
       }"
@@ -37,7 +37,7 @@
     <router-link :to="{name:'CustomersList',
       }"
     >
-      <button @click="updateCustomer">Modifier</button>
+      <b-button pill variant="info" id="btnC" @click="updateCustomer">Modifier</b-button>
     </router-link>
   </div>
 </template>
@@ -84,5 +84,17 @@ export default {
 <style scoped>
 .formulaire {
   text-align: center;
+  background-color: #F6E6D1 ;
+}
+#createCustomer{
+  background-color: #F6E6D1 ;
+}
+
+div{
+  background-color: #F6E6D1 ;
+}
+.btn.btn-info.rounded-pill {
+  background-color: #728C69;
+  cursor: pointer;
 }
 </style>
