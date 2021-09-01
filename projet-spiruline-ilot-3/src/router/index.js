@@ -16,6 +16,7 @@ import CreateReceller from "../components/CreateReceller";
 import OrderEdit from "../components/OrderEdit";
 
 import CustomerEdit from "../components/CustomerEdit";
+import Home from "../components/Home";
 
 
 import CreateOrder from "../components/CreateOrder";
@@ -135,6 +136,11 @@ const routes = [
         name: 'CustomerAdd',
         component: CustomerAdd,
         props: true
+    },
+    {
+        path: '/',
+        name: 'Home',
+        component: Home,
     },
 
 

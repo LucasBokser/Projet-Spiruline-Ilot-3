@@ -1,17 +1,19 @@
 <template>
   <div>
-    <h1>CustomersList</h1>
+    <div id="lagrosse">
+      <h1>CustomersList</h1>
 
-    <p class="mt-3">Page Actuelle: {{ pageActuelle }}/{{ lastPage }}</p>
-    <b-button @click="previousPage" v-show="pageActuelle-1>0" variant="outline-danger">Previous Page</b-button>
-    <b-button @click="nextPage" v-show="pageActuelle+1 <= lastPage" variant="outline-primary">Next Page</b-button>
+      <p class="mt-3">Page Actuelle: {{ pageActuelle }}/{{ lastPage }}</p>
+      <b-button @click="previousPage" v-show="pageActuelle-1>0" variant="outline-danger">Previous Page</b-button>
+      <b-button @click="nextPage" v-show="pageActuelle+1 <= lastPage" variant="outline-primary">Next Page</b-button>
 
-    <!-- v-for="customer in customers" :key="customer.id"-->
-    <router-link :to="{name:'CustomerAdd',
+      <!-- v-for="customer in customers" :key="customer.id"-->
+      <router-link :to="{name:'CustomerAdd',
      }"
-    >
-      <b-button variant="outline-success">Creer</b-button>
-    </router-link>
+      >
+        <b-button variant="outline-success">Creer</b-button>
+      </router-link>
+    </div>
     <b-table striped hover :items="customers" :fields="fields" :per-page="perPage" :current-page="currentPage">
       <template #cell(action)="data">
         <router-link :to="{name:'Customer',
@@ -161,6 +163,8 @@ export default {
 </script>
 
 <style scoped>
-
+#lagrosse {
+  background-color: #2c3e50;
+}
 </style>
 
