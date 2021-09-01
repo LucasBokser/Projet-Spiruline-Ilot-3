@@ -2,12 +2,13 @@
   <div id="app">
     <div>
       <b-navbar toggleable="lg" type="dark" variant="info">
-        <b-navbar-brand href="#">Barre de navigation</b-navbar-brand>
+        <b-navbar-brand href="/home">Home</b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
+
             <b-nav-item>
               <router-link to="/customersList"
                 >Go to Customer</router-link
@@ -28,6 +29,22 @@
                 >Go to Supplier</router-link
               ></b-nav-item
             >
+
+
+            <b-nav-item>
+              <router-link to="/customersList" tag="cx-button">Go to Customer</router-link>
+            </b-nav-item>
+            <b-nav-item>
+              <router-link to="/ordersList" tag="cx-button">Go to Order</router-link>
+            </b-nav-item>
+            <b-nav-item>
+              <router-link to="/recellersList" tag="cx-button">Go to Receller</router-link>
+            </b-nav-item>
+            <b-nav-item>
+              <router-link to="/suppliersList" tag="cx-button">Go to Supplier</router-link>
+            </b-nav-item>
+
+
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->
@@ -43,6 +60,8 @@
               >
             </b-nav-form>
 
+
+
             <b-nav-item-dropdown right>
               <!-- Using 'button-content' slot -->
               <template #button-content>
@@ -56,20 +75,24 @@
       </b-navbar>
     </div>
 
-    <HelloWorld msg="Ca Wax pour moi" />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+
 
 export default {
   name: "App",
   components: {
     HelloWorld,
+
   },
 };
+
+  }
+}
+
 </script>
 
 <style>
@@ -79,5 +102,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
+
+
+
+
 }
 </style>

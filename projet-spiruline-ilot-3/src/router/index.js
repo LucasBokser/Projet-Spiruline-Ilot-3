@@ -1,4 +1,4 @@
-import  VueRouter  from 'vue-router'
+import VueRouter from 'vue-router'
 import HelloWorld from '../components/HelloWorld.vue'
 import Customer from "../components/Customer";
 import CustomersList from "../components/CustomersList";
@@ -13,9 +13,16 @@ import SuppliersMap from "../components/SuppliersMap";
 import EditReceller from "../components/EditReceller";
 import CreateReceller from "../components/CreateReceller";
 
+import OrderEdit from "../components/OrderEdit";
 
+import CustomerEdit from "../components/CustomerEdit";
+
+
+import CreateOrder from "../components/CreateOrder";
 //import App from "../App";
 import Vue from "vue";
+import CustomerAdd from "../components/CustomerAdd";
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -56,6 +63,7 @@ const routes = [
         component: RecellersList,
     },
     {
+
         path: '/editReceller/:id',
         name: 'EditReceller',
         component: EditReceller,
@@ -75,14 +83,16 @@ const routes = [
         component: Customer,
     },
     {
+
         path: '/customersList',
         name: 'CustomersList',
         component: CustomersList,
     },
     {
-        path: '/order',
+        path: '/ordersList/:id',
         name: 'Order',
         component: Order,
+        props: true
     },
     {
         path: '/ordersList',
@@ -93,7 +103,41 @@ const routes = [
         path: '/HelloWorld',
         name: 'HelloWorld',
         component: HelloWorld,
-    }
+    },
+
+    {
+        path: '/customersList/:id',
+        name: 'Customer',
+        component: Customer,
+        props: true
+    },
+    {
+
+        path: '/orders/edit/:id',
+        name: 'OrderEdit',
+        component: OrderEdit,
+        props: true
+    },
+    {
+        path: '/orders/add',
+        name: 'CreateOrder',
+        component: CreateOrder,
+        props: true
+    },
+        {
+        path: '/customers/edit/:id',
+        name: 'CustomerEdit',
+        component: CustomerEdit,
+        props: true
+    },
+    {
+        path: '/customers/add',
+        name: 'CustomerAdd',
+        component: CustomerAdd,
+        props: true
+    },
+
+
 
 ]
 const router = new VueRouter({
