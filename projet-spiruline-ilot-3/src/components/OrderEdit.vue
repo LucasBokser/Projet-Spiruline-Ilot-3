@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div id="editOrder">
 <div>
-      <h2><span>Edit Order</span></h2>
+      <h2><span>Modifier une commande</span></h2>
 
         <b-button variant="outline-primary">Back</b-button>
 </div>
@@ -20,10 +20,10 @@
     <input id="price" type="string" v-model="form.price"/>
     <br>
     <label for="customer_id">Customer id </label>
-    <input id="customer_id" type="integer" v-model="form.customer_id"/>
+    <input id="customer_id" type="integer" v-model="form.customer_id"/><br>
 
     <router-link :to="{name:'OrdersList' }">
-      <b-button @click="updateOrder" variant="outline-info">Submit Changes </b-button>
+      <b-button pill @click="updateOrder" variant="info">Modifier </b-button>
     </router-link>
   </div>
 </template>
@@ -65,4 +65,11 @@ export default {
 
 <style scoped>
 
+div{
+  background-color: #F6E6D1;
+}
+.btn.btn-info.rounded-pill {
+  background-color: #728C69;
+  cursor: pointer;
+}
 </style>

@@ -1,30 +1,30 @@
 <template>
-  <div>
+  <div id="createOrder">
     <div v-show="addOrder">
-      <p>The Order is successfully added</p>
-      <router-link to="/OrdersList">Back to orders list</router-link>
+      <p>Votre commande a été ajoutée</p>
+      <router-link to="/OrdersList">Retour à la liste</router-link>
     </div>
 
     <div v-show="!addOrder">
-      <h2><span>Add an order </span></h2>
-      <label for="id">Order id </label>
-      <input id="id" type="number" v-model="formulaire.id"/>
-      <br>
-      <label for="number">Order number </label>
-      <input id="number" type="number" v-model="formulaire.number"/>
-      <br>
-      <label for="date">Order date </label>
-      <input id="date" type="date" v-model="formulaire.date"/>
-      <br>
-      <label for="price">Price </label>
+      <h2><span>Ajouter une commande </span></h2>
 
-      <input id="price" type="number" v-model="formulaire.price"/>
+      <input id="id" type="number" v-model="formulaire.id" placeholder="id de la commande"/>
       <br>
-      <label for="customer_id">Customer id </label>
-      <input id="customer_id" type="number" v-model="formulaire.customer_id"/>
 
-      <button @click="addNewOrder">Add an order</button>
+      <input id="number" type="number" v-model="formulaire.number" placeholder="Numéro de la commande"/>
+      <br>
+
+      <input id="date" type="date" v-model="formulaire.date" placeholder="Date de la commande"/>
+      <br>
+
+      <input id="price" type="number" v-model="formulaire.price" placeholder="Prix de la commande"/>
+      <br>
+
+      <input id="customer_id" type="number" v-model="formulaire.customer_id" placeholder="id du client"/>
+
+
     </div>
+    <b-button pill variant="info" @click="addNewOrder">Ajouter une commande</b-button>
   </div>
 </template>
 
@@ -60,5 +60,12 @@ export default {
 }
 </script>
 <style scoped>
+#createOrder{
 
+  background-color: #F6E6D1;
+}
+.btn.btn-info.rounded-pill {
+  background-color: #728C69;
+  cursor: pointer;
+}
 </style>

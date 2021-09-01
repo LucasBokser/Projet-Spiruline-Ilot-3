@@ -7,12 +7,18 @@ import OrdersList from "../components/OrdersList";
 import Receller from "../components/Receller";
 import RecellersList from "../components/RecellersList";
 import RecellersMap from "../components/RecellersMap";
+
+import EditReceller from "../components/EditReceller";
+import CreateReceller from "../components/CreateReceller";
 import Supplier from "../components/Supplier";
 import SuppliersList from "../components/SuppliersList";
 import SuppliersMap from "../components/SuppliersMap";
-import EditReceller from "../components/EditReceller";
-import CreateReceller from "../components/CreateReceller";
-
+import SuppliersEdit from "../components/SuppliersEdit";
+import shop from "../components/shop";
+import panier from "../components/panier";
+import checkoutcard from  "../components/checkoutcard";
+import merci from  "../components/merci";
+import SupplierAdd from "../components/SupplierAdd"
 import OrderEdit from "../components/OrderEdit";
 
 import CustomerEdit from "../components/CustomerEdit";
@@ -34,7 +40,7 @@ const routes = [
     },*/
     {
         path: '/supplier',
-        name: 'Supplier',
+        name: 'SupplierFiche',
         component: Supplier,
     },
     {
@@ -142,7 +148,44 @@ const routes = [
         name: 'Home',
         component: Home,
     },
+    {
+        path: 'SuppliersEdit/:id',
+        name: 'SuppliersEdit',
+        component: SuppliersEdit,
+        props: true
+    },
+    {
+        path: '/shop',
+        name: 'shop',
+        component: shop,
 
+    },
+    {
+        path: '/panier',
+        name: 'panier',
+        component: panier,
+
+    },
+    {
+        path: '/checkoutcard',
+        name: 'checkoutcard',
+        component: checkoutcard,
+
+
+    },
+    {
+        path: '/merci',
+        name: 'merci',
+        component: merci,
+
+    },
+    { path: '/suppliersMap', component: SuppliersMap, name: 'Map', props: true, }, //route qui affiche la map
+    {
+        path: '/SupplierAdd',
+        name: 'SupplierAdd',
+        component: SupplierAdd,
+
+    },
 
 
 ]

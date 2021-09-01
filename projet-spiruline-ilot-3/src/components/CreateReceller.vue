@@ -1,12 +1,16 @@
 <template>
-  <div>
+  <div id="createReceller">
     <div v-show="createRecellerDone">
-      <p>The reseller is successfully added</p>
+      <p>Votre revendeur a été ajouté</p>
     </div>
 
     <div v-show="!createRecellerDone">
-      <h2>Create your reseller</h2>
-
+      <h2>Créer votre revendeur</h2>
+      <router-link :to="{name:'RecellersList',
+      }"
+      >
+        <b-button variant="outline-primary">Back</b-button>
+      </router-link><br>
       <input type="text" v-model="forms.name" placeholder="Name" />
       <br />
       <input
@@ -26,7 +30,7 @@
       />
       <br />
 
-      <b-button @click="createReceller" variant="outline-info">Create</b-button>
+      <b-button pill variant="info" @click="createReceller" >Créer</b-button>
     </div>
   </div>
 </template>
@@ -67,4 +71,14 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+#createReceller{
+
+  background-color: #F6E6D1;
+
+}
+.btn.btn-info.rounded-pill {
+  background-color: #728C69;
+  cursor: pointer;
+}
+</style>

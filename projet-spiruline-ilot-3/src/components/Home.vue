@@ -1,6 +1,6 @@
 <template>
-  <div id="home">
-    <div id="carousel" class="carousel">
+  <div id="home" fluid="sm">
+    <div id="carousel" class="carousel" >
       <b-carousel
           id="carousel-fade"
           style="text-shadow: 0px 0px 2px #000"
@@ -10,31 +10,51 @@
           img-height="683"
       >
         <b-carousel-slide
-            caption="Suppliers">
+            caption="Fournisseurs">
           <template #img>
-            <img height="683" width="1411"
-                 src="https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fHN1cmZ8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80">
+            <b-img height="683" width="1411"
+                 src="https://images.unsplash.com/photo-1586996292898-71f4036c4e07?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fHN1cmZ8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
+                   fluid-grow alt="Fluid-grow image"
+                   v-on:click="goToSuppliers"></b-img>
           </template>
         </b-carousel-slide>
-        <b-carousel-slide id="reseller"
-                          caption="Recellers">
+        <b-carousel-slide
+            caption="Revendeurs">
+
           <template #img>
-            <img height="683" width="1411"
-                 src="https://p4.wallpaperbetter.com/wallpaper/211/399/630/surf-wallpapers-free-backgrounds-picture-96552-wallpaper-preview.jpg">
+             <b-img height="683" width="1411"
+                 src="https://p4.wallpaperbetter.com/wallpaper/211/399/630/surf-wallpapers-free-backgrounds-picture-96552-wallpaper-preview.jpg"
+                    fluid-grow alt="Fluid-grow image"
+                    v-on:click="goToRecellers"></b-img>
 
           </template>
+
         </b-carousel-slide>
         <b-carousel-slide
-            caption="Customers">
+            caption="Clients">
           <template #img>
-            <img height="683" width="1411"
-                 src="https://wi.wallpapertip.com/wsimgs/14-142414_surfing-wallpapers-data-src-wave-surf-wallpaper-hd.jpg">
+            <b-img height="683" width="1411"
+                 src="https://wi.wallpapertip.com/wsimgs/14-142414_surfing-wallpapers-data-src-wave-surf-wallpaper-hd.jpg"
+                   fluid-grow alt="Fluid-grow image"
+                   v-on:click="goToCustomers"></b-img>
           </template>
         </b-carousel-slide>
         <b-carousel-slide
-            caption="Orders">
+            caption="Commandes">
           <template #img>
-            <img height="683" width="1411" src="https://images6.alphacoders.com/407/407732.jpg">
+            <b-img height="683" width="1411"
+                 src="https://images6.alphacoders.com/407/407732.jpg"
+                   fluid-grow alt="Fluid-grow image"
+                   v-on:click="goToOrders"></b-img>
+          </template>
+        </b-carousel-slide>
+        <b-carousel-slide
+            caption="Magasin">
+          <template #img>
+            <b-img height="683" width="1411"
+                 src="https://c0.wallpaperflare.com/preview/648/197/145/blue-beach-surf-travel.jpg"
+                 fluid-grow alt="Fluid-grow image"
+                   v-on:click="goToShop"></b-img>
           </template>
         </b-carousel-slide>
       </b-carousel>
@@ -51,6 +71,24 @@ export default {
       sliding: null
     }
   },
+  methods:{
+    goToSuppliers(){
+      window.location.href="#/suppliersList"
+    },
+    goToRecellers(){
+      window.location.href="#/recellersList"
+    },
+    goToCustomers(){
+      window.location.href="#/customersList"
+    },
+    goToOrders(){
+      window.location.href="#/ordersList"
+    },
+    goToShop(){
+      window.location.href="#/shop"
+    },
+
+  }
   /* methods: {
      onSlideStart(slide) {
        this.sliding = true
@@ -64,6 +102,7 @@ export default {
 <style scoped>
 #home {
   background-color: #2c3e50;
+
 }
 
 #carousel {
@@ -74,4 +113,5 @@ export default {
   margin: 0 auto;
 
 }
+
 </style>

@@ -1,6 +1,7 @@
 <template>
+
   <div style="height: 80vh">
-    <h1>ResellersMap</h1>
+    <h1>Localisation des revendeurs</h1>
 
     <LMap :zoom="zoom" :center="center">
       <LTileLayer :url="url"></LTileLayer>
@@ -54,4 +55,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+div{
+
+  background-color: #F6E6D1;
+}
+</style>

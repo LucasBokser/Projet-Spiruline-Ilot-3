@@ -6,8 +6,8 @@
 
       <div>
 
-        <b-navbar toggleable="lg" type="dark" variant="info">
-          <b-navbar-brand href="/">Home</b-navbar-brand>
+        <b-navbar toggleable="lg" type="dark" variant="dark">
+          <b-navbar-brand href="/">Accueil</b-navbar-brand>
 
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -16,17 +16,23 @@
 
 
               <b-nav-item>
-                <router-link to="/customersList" tag="cx-button">Go to Customer</router-link>
+                <router-link to="/customersList" tag="li">Espace clients</router-link>
 
               </b-nav-item>
               <b-nav-item>
-                <router-link to="/ordersList" tag="li">Go to Order</router-link>
+                <router-link to="/ordersList" tag="li">Les commandes</router-link>
               </b-nav-item>
               <b-nav-item>
-                <router-link to="/recellersList" tag="li">Go to Receller</router-link>
+                <router-link to="/recellersList" tag="li">Nos revendeurs</router-link>
               </b-nav-item>
               <b-nav-item>
-                <router-link to="/suppliersList" tag="li">Go to Supplier</router-link>
+                <router-link to="/suppliersList" tag="li">Nos fournisseurs</router-link>
+              </b-nav-item>
+              <b-nav-item>
+                <router-link to="/shop" tag="li">Magasin</router-link>
+              </b-nav-item>
+              <b-nav-item>
+                <router-link to="/merci" tag="li">Nous contacter</router-link>
               </b-nav-item>
 
 
@@ -38,10 +44,10 @@
                 <b-form-input
                     size="sm"
                     class="mr-sm-2"
-                    placeholder="Search"
+                    placeholder="Rechercher"
                 ></b-form-input>
                 <b-button size="sm" class="my-2 my-sm-0" type="submit"
-                >Search
+                >Rechercher
                 </b-button
                 >
               </b-nav-form>
@@ -50,7 +56,7 @@
               <b-nav-item-dropdown right>
                 <!-- Using 'button-content' slot -->
                 <template #button-content>
-                  <em>User</em>
+                  <em>Utilisateur</em>
                 </template>
                 <b-dropdown-item href="#">Profile</b-dropdown-item>
                 <b-dropdown-item href="#">Sign Out</b-dropdown-item>
@@ -114,5 +120,8 @@ export default {
 #ontente {
   background-color: #2c3e50;
 
+}
+.navbar.navbar-dark.bg-dark{
+  background-color: #728C69!important;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="lagrosse">
-      <h1>CustomersList</h1>
+      <h1>Liste des clients</h1>
 
       <p class="mt-3">Page Actuelle: {{ pageActuelle }}/{{ lastPage }}</p>
       <b-button @click="previousPage" v-show="pageActuelle-1>0" variant="outline-danger">Previous Page</b-button>
@@ -14,7 +14,7 @@
         <b-button variant="outline-success">Creer</b-button>
       </router-link>
     </div>
-    <b-table striped hover :items="customers" :fields="fields" :per-page="perPage" :current-page="currentPage">
+    <b-table responsive striped hover :items="customers" :fields="fields" :per-page="perPage" :current-page="currentPage">
       <template #cell(action)="data">
         <router-link :to="{name:'Customer',
       params:{
@@ -70,10 +70,12 @@ export default {
         },
         {
           key: "firstName",
+          sortable: true,
           label: "Prenom",
         },
         {
           key: "lastName",
+          sortable: true,
           label: "Nom",
         },
         {
@@ -163,8 +165,8 @@ export default {
 </script>
 
 <style scoped>
-#lagrosse {
-  background-color: #2c3e50;
+#lagrosse{
+  background-color: #F6E6D1;
 }
 </style>
 

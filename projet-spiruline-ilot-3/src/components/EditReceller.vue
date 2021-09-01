@@ -1,7 +1,11 @@
 <template>
-  <div>
-    <h1>Edit Reseller</h1>
-
+  <div >
+    <h1>Modifier un revendeur</h1>
+    <router-link :to="{name:'RecellersList',
+      }"
+    >
+      <b-button variant="outline-primary">Back</b-button>
+    </router-link><br>
     <input type="text" v-model="form.name" />
     <br />
     <input type="email" v-model="form.description" />
@@ -14,7 +18,7 @@
     <br />
 
     <router-link :to="{ name: 'RecellersList' }">
-      <b-button @click="updateReceller" variant="outline-info">Edit </b-button>
+      <b-button @click="updateReceller" variant="outline-info">Modifier </b-button>
     </router-link>
   </div>
 </template>
@@ -59,4 +63,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+div{
+  background-color: #F6E6D1;
+}
+</style>
