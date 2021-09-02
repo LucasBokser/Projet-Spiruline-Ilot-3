@@ -2,7 +2,7 @@
   <div>
   <div class="backG" id="resellerList">
     <h1>Liste des revendeurs</h1>
-
+    <p class="mt-3">Page Actuelle: {{ currentPage }}/{{ lastPage }}</p>
 
     <b-button
       @click="previousPage"
