@@ -3,26 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f58c0812-c131-48d1-81ad-347b00116612" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/assets/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/assets/global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/CreateOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/CreateOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/CreateReceller.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/CreateReceller.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/Customer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/Customer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/CustomerAdd.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/CustomerAdd.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/CustomerEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/CustomerEdit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/CustomersList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/CustomersList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/EditReceller.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/EditReceller.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/OrderEdit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/OrderEdit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/OrdersList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/OrdersList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/Receller.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/Receller.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/RecellersList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/RecellersList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/RecellersMap.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/RecellersMap.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/Supplier.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/Supplier.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/SuppliersList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/SuppliersList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/SuppliersMap.vue" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/components/SuppliersMap.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projet-spiruline-ilot-3/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/projet-spiruline-ilot-3/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
